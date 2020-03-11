@@ -1,0 +1,82 @@
+[
+    {
+        "model": "statlockapp.player",
+        "pk": 1,
+        "fields": {
+            "name": "Player 1",
+            "eight_rating": 7,
+            "nine_rating": 9,
+            "team": 1
+        }
+    },
+    {
+        "model": "statlockapp.player",
+        "pk": 2,
+        "fields": {
+            "name": "Player 2",
+            "eight_rating": 5,
+            "nine_rating": 6,
+            "team": 1
+        }
+    },
+    {
+        "model": "statlockapp.player",
+        "pk": 3,
+        "fields": {
+            "name": "Player 3",
+            "eight_rating": 5,
+            "nine_rating": 5,
+            "team": 1
+        }
+    },
+    {
+        "model": "statlockapp.player",
+        "pk": 4,
+        "fields": {
+            "name": "Player 4",
+            "eight_rating": 5,
+            "nine_rating": 5,
+            "team": 1
+        }
+    },
+    {
+        "model": "statlockapp.player",
+        "pk": 5,
+        "fields": {
+            "name": "Player 5",
+            "eight_rating": 4,
+            "nine_rating": 4,
+            "team": 1
+        }
+    },
+    {
+        "model": "statlockapp.player",
+        "pk": 6,
+        "fields": {
+            "name": "Player 6",
+            "eight_rating": 3,
+            "nine_rating": 3,
+            "team": 1
+        }
+    },
+    {
+        "model": "statlockapp.player",
+        "pk": 7,
+        "fields": {
+            "name": "Player 7",
+            "eight_rating": 2,
+            "nine_rating": 3,
+            "team": 1
+        }
+    },
+    {
+        "model": "statlockapp.player",
+        "pk": 8,
+        "fields": {
+            "name": "Player 8",
+            "eight_rating": 2,
+            "nine_rating": 1,
+            "team": 1
+        }
+    }
+]

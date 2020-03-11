@@ -1,0 +1,10 @@
+[
+    {
+        "model": "statlockapp.captain",
+        "pk": 1,
+        "fields": {
+            "user": 1,
+            "team": 1
+        }
+    }
+]

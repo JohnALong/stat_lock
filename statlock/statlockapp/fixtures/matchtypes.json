@@ -1,0 +1,16 @@
+[
+    {
+        "model": "statlockapp.matchtype",
+        "pk": 1,
+        "fields": {
+            "name": "Eight Ball"
+        }
+    },
+    {
+        "model": "statlockapp.matchtype",
+        "pk": 2,
+        "fields": {
+            "name": "Nine Ball"
+        }
+    }
+]
