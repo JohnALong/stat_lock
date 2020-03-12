@@ -3,12 +3,11 @@
 
 {% block content %}
     <h1>My Team</h1>
-
-    <ol>
+    <div>{{ team.name }}
     {% for player in all_players %}
         <li>
-            {{ player.name }} {{ player.eight_rating }} {{ player.nine_rating }}
+            <a href="{% url 'statlockapp:player' player.id %}">{{ player.name }} {{ player.eight_rating }} {{ player.nine_rating }} {{ player.team_id }}
+        </li>
         </li>
     {% endfor %}
-    </ol>
 {% endblock %}

@@ -7,14 +7,15 @@ from django.contrib.auth.decorators import login_required
 # @login_required
 def team_list(request):
     if request.method == 'GET':
-
-        team_members = Player.objects.all()
-
+        
+        team = Team.objects.get(id=request.user.captain.team.id)
+        team_members = Player.objects.filter(team__id=request.user.captain.team_id)
 
 
         # template = 'teams/team_list.html'
         context = {
-            'all_players': team_members
+            'all_players': team_members.values(),
+            'team': team
         }
 
         return render(request, 'teams/team_list.html', context)
