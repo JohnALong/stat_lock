@@ -2,12 +2,12 @@
 {% load static %}
 
 {% block content %}
-    <h1>Teams</h1>
+    <h1>My Team</h1>
 
     <ol>
-    {% for team in all_teams %}
+    {% for player in all_players %}
         <li>
-            {{ team.name }}
+            {{ player.name }} {{ player.eight_rating }} {{ player.nine_rating }}
         </li>
     {% endfor %}
     </ol>

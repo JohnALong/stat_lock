@@ -1,5 +1,4 @@
 from django.db import models
-from .team import Team
 from django.db.models import F
 
 class Player(models.Model):
@@ -7,7 +6,7 @@ class Player(models.Model):
     name = models.CharField(max_length=50)
     eight_rating = models.IntegerField(default=0)
     nine_rating = models.IntegerField(default=0)
-    team = models.ForeignKey(Team, on_delete=models.CASCADE)
+    team = models.ForeignKey('team', on_delete=models.CASCADE)
 
     class Meta:
         verbose_name = ("player")
