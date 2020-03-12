@@ -1,0 +1,72 @@
+[
+    {
+        "model": "statlockapp.team",
+        "pk": 1,
+        "fields": {
+            "name": "World Beaters"
+        }
+    },
+    {
+        "model": "statlockapp.team",
+        "pk": 2,
+        "fields": {
+            "name": "Hoowa"
+        }
+    },
+    {
+        "model": "statlockapp.team",
+        "pk": 3,
+        "fields": {
+            "name": "Blame Brad"
+        }
+    },
+    {
+        "model": "statlockapp.team",
+        "pk": 4,
+        "fields": {
+            "name": "Poke and Hope"
+        }
+    },
+    {
+        "model": "statlockapp.team",
+        "pk": 5,
+        "fields": {
+            "name": "Hot Damn Again"
+        }
+    },
+    {
+        "model": "statlockapp.team",
+        "pk": 6,
+        "fields": {
+            "name": "Outta Nowhere"
+        }
+    },
+    {
+        "model": "statlockapp.team",
+        "pk": 7,
+        "fields": {
+            "name": "Almost There"
+        }
+    },
+    {
+        "model": "statlockapp.team",
+        "pk": 8,
+        "fields": {
+            "name": "Billiard Bullies"
+        }
+    },
+    {
+        "model": "statlockapp.team",
+        "pk": 9,
+        "fields": {
+            "name": "River City Raptors"
+        }
+    },
+    {
+        "model": "statlockapp.team",
+        "pk": 10,
+        "fields": {
+            "name": "Spun Off"
+        }
+    }
+]

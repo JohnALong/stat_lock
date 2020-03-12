@@ -1,0 +1,62 @@
+[
+    {
+        "model": "statlockapp.match",
+        "pk": 1,
+        "fields": {
+            "player": 1,
+            "match_type": 1,
+            "date": "2019-10-07",
+            "won": 0
+        }
+    },
+    {
+        "model": "statlockapp.match",
+        "pk": 2,
+        "fields": {
+            "player": 1,
+            "match_type": 2,
+            "date": "2019-10-07",
+            "won": 0
+        }
+    },
+    {
+        "model": "statlockapp.match",
+        "pk": 3,
+        "fields": {
+            "player": 2,
+            "match_type": 1,
+            "date": "2019-10-07",
+            "won": 0
+        }
+    },
+    {
+        "model": "statlockapp.match",
+        "pk": 4,
+        "fields": {
+            "player": 2,
+            "match_type": 2,
+            "date": "2019-10-07",
+            "won": 1
+        }
+    },
+    {
+        "model": "statlockapp.match",
+        "pk": 5,
+        "fields": {
+            "player": 3,
+            "match_type": 1,
+            "date": "2019-10-07",
+            "won": 1
+        }
+    },
+    {
+        "model": "statlockapp.match",
+        "pk": 6,
+        "fields": {
+            "player": 3,
+            "match_type": 2,
+            "date": "2019-10-07",
+            "won": 0
+        }
+    }
+]
