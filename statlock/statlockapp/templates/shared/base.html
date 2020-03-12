@@ -1,0 +1,36 @@
+{% load static %}
+{% comment %} holds all the html for entire site & extends into each template {% endcomment %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Statlock</title>
+
+    {% comment %} <link rel="stylesheet" href="{% static 'styles/base.css' %}" />
+    {% block css %}
+    {% endblock %} {% endcomment %}
+</head>
+
+<body>
+
+    {% comment %} <nav id="site-nav">
+        <ol class="navList">
+            <li class="navList__route"><a href="{% url 'libraryapp:home' %}">Home</a></li>
+            <li class="navList__route"><a href="{% url 'libraryapp:libraries' %}">Libraries</a></li>
+            <li class="navList__route"><a href="{% url 'libraryapp:books' %}">Books</a></li>
+            <li class="navList__route"><a href="{% url 'libraryapp:librarians' %}">Librarians</a></li>
+            <li class="navList__route"><a href="{% url 'libraryapp:logout' %}">Logout</a></li>
+        </ol>
+    </nav> {% endcomment %}
+    <main class="main-content">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    {% comment %} {% block scripts %}
+    {% endblock scripts %} {% endcomment %}
+
+</body>
+
+</html>
