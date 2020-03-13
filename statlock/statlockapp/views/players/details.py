@@ -17,3 +17,14 @@ def player_details(request, player_id):
         }
 
         return render(request, template, context)
+
+    if request.method == 'POST':
+        form_data = request.POST
+        if (
+            "actual_method" in form_data
+            and form_data["actual_method"] == "DELETE"
+        ):
+            player = Player.objects.get(id=player_id)
+            player.delete()
+
+            return redirect(reverse('statlockapp:team'))
