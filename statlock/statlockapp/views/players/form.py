@@ -1,9 +1,11 @@
 import sqlite3
 from django.shortcuts import render, redirect, reverse
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from statlockapp.models import Player, Team, Captain
 from ..connection import Connection
 
+@login_required
 def player_form(request):
 
     if request.method == 'GET':
@@ -28,3 +30,16 @@ def player_form(request):
         new_player.save()
 
     return redirect(reverse('statlockapp:team'))
+
+@login_required
+def player_edit_form(request, player_id):
+
+    if request.method == 'GET':
+        player = Player.objects.get(id=player_id)
+
+        template = 'players/form.html'
+        context = {
+            'player': player
+        }
+
+        return render(request, template, context)

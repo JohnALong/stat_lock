@@ -4,22 +4,32 @@
 {% block content %}
     <h1>Add Player</h1>
 
-
+{% if player.id is not None %}
+    <form action="{% url 'statlockapp:player' player.id %}" method="post">
+{% else %}
     <form action="{% url 'statlockapp:player_form' %}" method="post">
+{% endif %}
         {% csrf_token %}
-      <fieldset>
-          <label for="name">Name: </label>
-          <input id="name" type="text" name="name">
-      </fieldset>
-      <fieldset>
-          <label for="eight_rating">8 Ball skill level: </label>
-          <input id="eight_rating" type="text" name="eight_rating">
-      </fieldset>
-      <fieldset>
-          <label for="nine_rating">9 Bal skill level: </label>
-          <input id="nine_rating" type="text" name="nine_rating">
-      </fieldset>
-      </fieldset>
-      <input type="submit" value="Add to Roster" />
+        <fieldset>
+            <label for="name">Name: </label>
+            <input id="name" type="text" name="name" value="{{ player.name }}">
+        </fieldset>
+        <fieldset>
+            <label for="eight_rating">8 Ball skill level: </label>
+            <input id="eight_rating" type="text" name="eight_rating" value="{{ player.eight_rating }}">
+        </fieldset>
+        <fieldset>
+            <label for="nine_rating">9 Bal skill level: </label>
+            <input id="nine_rating" type="text" name="nine_rating" value="{{ player.nine_rating }}">
+        </fieldset>
+        </fieldset>
+
+        {% if player.id is not None %}
+        <input type="hidden" name="actual_method" value="PUT">
+        <input type="submit" value="Update" />
+        {% else %}
+        <input type="submit" value="Add to Roster" />
+        {% endif %}
+
     </form>
 {% endblock %}

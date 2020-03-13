@@ -4,7 +4,11 @@
     <h1>{{ player.name }}:</h1>
     <form action="{% url 'statlockapp:player' player.id %}" method="POST">
     {% csrf_token %}
-    <input type="hidden" name="actual_method" value="DELETE">
-    <button>Delete</button>
-</form>
+        <input type="hidden" name="actual_method" value="DELETE">
+        <button>Delete</button>
+    </form>
+    <form action="{% url 'statlockapp:player_edit_form' player.id %}" method="GET">
+        {% csrf_token %}
+        <button>Edit</button>
+    </form>
 {% endblock %}
