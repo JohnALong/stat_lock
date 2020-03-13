@@ -1,0 +1,25 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+
+{% block content %}
+    <h1>Add Player</h1>
+
+
+    <form action="{% url 'statlockapp:player_form' %}" method="post">
+        {% csrf_token %}
+      <fieldset>
+          <label for="name">Name: </label>
+          <input id="name" type="text" name="name">
+      </fieldset>
+      <fieldset>
+          <label for="eight_rating">8 Ball skill level: </label>
+          <input id="eight_rating" type="text" name="eight_rating">
+      </fieldset>
+      <fieldset>
+          <label for="nine_rating">9 Bal skill level: </label>
+          <input id="nine_rating" type="text" name="nine_rating">
+      </fieldset>
+      </fieldset>
+      <input type="submit" value="Add to Roster" />
+    </form>
+{% endblock %}
