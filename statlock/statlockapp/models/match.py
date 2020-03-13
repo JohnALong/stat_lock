@@ -10,8 +10,8 @@ class Match(models.Model):
     match_type = models.ForeignKey(MatchType, on_delete=models.CASCADE)
 
     class Meta:
-        verbose_name = ("book")
-        verbose_name_plural = ("books")
+        verbose_name = ("match")
+        verbose_name_plural = ("matches")
 
     def __str__(self):
         return self.title

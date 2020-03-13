@@ -10,6 +10,7 @@ def player_details(request, player_id):
 
     if request.method == 'GET':
         player = Player.objects.get(id=player_id)
+        print(player.team)
 
         template = 'players/detail.html'
         context = {
