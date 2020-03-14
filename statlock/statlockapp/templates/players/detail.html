@@ -5,18 +5,27 @@
     <form action="{% url 'statlockapp:player' player.id %}" method="POST">
     {% csrf_token %}
         <input type="hidden" name="actual_method" value="DELETE">
-        <button>Delete</button>
+        <button>Delete Player</button>
     </form>
     <form action="{% url 'statlockapp:player_edit_form' player.id %}" method="GET">
         {% csrf_token %}
-        <button>Edit</button>
+        <button>Edit Player</button>
     </form>
-    {% for match in matches %}
+    {% for eight_match in eight_matches %}
         <li>
-            {{ match.date }} {{ match.match_type }} {{ match.won }}
-            <form action="{% url 'statlockapp:match_edit_form' match.id %}" method="GET">
+            {{ eight_match.date }} {{ eight_match.match_type }} {{ eight_match.won }}
+            <form action="{% url 'statlockapp:match_edit_form' eight_match.id %}" method="GET">
                 {% csrf_token %}
-                <button>Edit</button>
+                <button>Edit Match</button>
+            </form>
+        </li>
+    {% endfor %}
+    {% for nine_match in nine_matches %}
+        <li>
+            {{ nine_match.date }} {{ nine_match.match_type }} {{ nine_match.won }}
+            <form action="{% url 'statlockapp:match_edit_form' nine_match.id %}" method="GET">
+                {% csrf_token %}
+                <button>Edit Match</button>
             </form>
         </li>
     {% endfor %}
