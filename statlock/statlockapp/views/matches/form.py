@@ -29,17 +29,23 @@ def match_form(request):
             player_id=form_data['player'],
             won = match_won)
 
-    return redirect(reverse('statlockapp:team'))
+        return redirect(reverse('statlockapp:team'))
+
 
 @login_required
 def match_edit_form(request, match_id):
 
     if request.method == 'GET':
         match = Match.objects.get(id=match_id)
+        print(match.won)
+        all_matchtypes = MatchType.objects.all()
+        all_players = Player.objects.all()
 
         template = 'matches/form.html'
         context = {
-            'match': match
+            'match': match,
+            'all_matchtypes': all_matchtypes,
+            'all_players': all_players
         }
 
         return render(request, template, context)

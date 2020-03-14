@@ -1,3 +1,4 @@
+
 {% extends 'shared/base.html' %}
 {% load static %}
 
@@ -19,16 +20,21 @@
             <label for="matchtype">Match Type: </label>
             <select id="player" type="text" name="player">
                 {% for player in all_players %}
-                    <option value="{{ player.id }}">{{ player.name }} </option>
+                    <option {% if player.id == match.player_id %}selected{% endif %} value="{{ player.id }}">{{ player.name }} </option>
                 {% endfor %}
             </select>
             <select id="matchtype" type="text" name="matchtype">
                 {% for matchtype in all_matchtypes %}
-                    <option value="{{ matchtype.id }}">{{ matchtype.name }} </option>
+                    <option {% if matchtype.id == match.match_type_id %}selected{% endif %} value="{{ matchtype.id }}">{{ matchtype.name }} </option>
                 {% endfor %}
             </select>
         </fieldset>
 
-        <input type="submit" value="Add Match" />
+        {% if match.id is not None %}
+            <input type="hidden" name="actual_method" value="PUT">
+            <input type="submit" value="Update Match" />
+        {% else %}
+            <input type="submit" value="Add Match" />
+        {% endif %}
     </form>
 {% endblock %}

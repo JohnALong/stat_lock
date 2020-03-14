@@ -13,5 +13,5 @@ class Match(models.Model):
         verbose_name = ("match")
         verbose_name_plural = ("matches")
 
-    def __str__(self):
-        return self.title
+    # def __str__(self):
+    #     return self.date

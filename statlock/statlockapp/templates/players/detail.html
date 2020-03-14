@@ -11,4 +11,13 @@
         {% csrf_token %}
         <button>Edit</button>
     </form>
+    {% for match in matches %}
+        <li>
+            {{ match.date }} {{ match.match_type }} {{ match.won }}
+            <form action="{% url 'statlockapp:match_edit_form' match.id %}" method="GET">
+                {% csrf_token %}
+                <button>Edit</button>
+            </form>
+        </li>
+    {% endfor %}
 {% endblock %}
