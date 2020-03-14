@@ -15,9 +15,6 @@ def match_details(request, match_id):
         # print(match, "stuff")
         
         players = match.player_set.all()
-        for player in players:
-            print(player.name, "stuff")
-            print(player.eight_skill)
 
         template = 'matches/detail.html'
         context = {

@@ -11,19 +11,21 @@ def player_details(request, player_id):
     if request.method == 'GET':
         player = Player.objects.get(id=player_id)
         print(player.name)
-        # match = Match.objects.filter(player_id=player.id)
-        # print(match, "stuff")
-        
-        matches = player.match_set.all()
-        for match in matches:
-            print(match.match_type, "stuff")
-            print(match.won)
-            print(match.date)
+
+
+        nine_matches = player.match_set.filter(match_type=2).order_by('-id')[:20]
+        for nine_match in nine_matches:
+            print("9", nine_match.won)
+
+        eight_matches = player.match_set.filter(match_type=1).order_by('-id')[:20]
+        for eight_match in eight_matches:
+            print("8", eight_match.won)
 
         template = 'players/detail.html'
         context = {
             'player': player,
-            'matches': matches
+            'nine_matches': nine_matches,
+            'eight_matches': eight_matches
         }
 
         return render(request, template, context)
