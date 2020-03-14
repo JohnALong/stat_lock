@@ -1,0 +1,40 @@
+
+{% extends 'shared/base.html' %}
+{% load static %}
+
+{% block content %}
+    <h1>Add/Edit Match</h1>
+
+
+{% if player.id is not None %}
+    <form action="{% url 'statlockapp:match' match.id %}" method="post">
+{% else %}
+    <form action="{% url 'statlockapp:match_form' %}" method="post">
+{% endif %}
+    {% csrf_token %}
+        <fieldset>
+            <label for="won">Check for Match Won: </label>
+            <input type="radio" value="True" name='won'>
+        </fieldset>
+        <fieldset>
+            <label for="matchtype">Match Type: </label>
+            <select id="player" type="text" name="player">
+                {% for player in all_players %}
+                    <option {% if player.id == match.player_id %}selected{% endif %} value="{{ player.id }}">{{ player.name }} </option>
+                {% endfor %}
+            </select>
+            <select id="matchtype" type="text" name="matchtype">
+                {% for matchtype in all_matchtypes %}
+                    <option {% if matchtype.id == match.match_type_id %}selected{% endif %} value="{{ matchtype.id }}">{{ matchtype.name }} </option>
+                {% endfor %}
+            </select>
+        </fieldset>
+
+        {% if match.id is not None %}
+            <input type="hidden" name="actual_method" value="PUT">
+            <input type="submit" value="Update Match" />
+        {% else %}
+            <input type="submit" value="Add Match" />
+        {% endif %}
+    </form>
+{% endblock %}

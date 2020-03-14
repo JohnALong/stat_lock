@@ -1,7 +1,7 @@
 {% extends 'shared/base.html' %}
 
 {% block content %}
-    <h1>{{ player.name }}:</h1>
+    <h1>{{ player.name }}: {{ player.team }}</h1>
     <form action="{% url 'statlockapp:player' player.id %}" method="POST">
     {% csrf_token %}
         <input type="hidden" name="actual_method" value="DELETE">
@@ -11,4 +11,13 @@
         {% csrf_token %}
         <button>Edit</button>
     </form>
+    {% for match in matches %}
+        <li>
+            {{ match.date }} {{ match.match_type }} {{ match.won }}
+            <form action="{% url 'statlockapp:match_edit_form' match.id %}" method="GET">
+                {% csrf_token %}
+                <button>Edit</button>
+            </form>
+        </li>
+    {% endfor %}
 {% endblock %}

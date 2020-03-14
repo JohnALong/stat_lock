@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block content %}
-    <h1>Add Player</h1>
+    <h1>Add/Edit Player</h1>
 
 {% if player.id is not None %}
     <form action="{% url 'statlockapp:player' player.id %}" method="post">

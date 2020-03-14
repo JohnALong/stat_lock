@@ -2,7 +2,7 @@ import sqlite3
 from django.urls import reverse
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-from statlockapp.models import Player
+from statlockapp.models import Player, Match
 from ..connection import Connection
 
 @login_required
@@ -10,10 +10,20 @@ def player_details(request, player_id):
 
     if request.method == 'GET':
         player = Player.objects.get(id=player_id)
+        print(player.name)
+        # match = Match.objects.filter(player_id=player.id)
+        # print(match, "stuff")
+        
+        matches = player.match_set.all()
+        for match in matches:
+            print(match.match_type, "stuff")
+            print(match.won)
+            print(match.date)
 
         template = 'players/detail.html'
         context = {
-            'player': player
+            'player': player,
+            'matches': matches
         }
 
         return render(request, template, context)

@@ -20,3 +20,5 @@ def team_list(request):
 
         return render(request, 'teams/team_list.html', context)
 
+
+
