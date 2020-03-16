@@ -19,11 +19,12 @@ def player_details(request, player_id):
         nine_matches = player.match_set.filter(match_type=2).order_by('-id')[:20]
         # calculate win percentage
         nine_wins = 0
+        nine_percentage = 0
         for nine_match in nine_matches:
             if nine_match.won==True:
                 nine_wins += 1
                 print("9", nine_match.won)
-        print("9 please", nine_wins/nine_count)
+        nine_percentage = (nine_wins/nine_count)*100
 
         eight_count = player.match_set.filter(match_type=1).order_by('-id')[:20].count()
         print("count", eight_count)
@@ -31,19 +32,20 @@ def player_details(request, player_id):
         eight_matches = player.match_set.filter(match_type=1).order_by('-id')[:20]
         # calculate win percentage
         eight_wins = 0
+        eight_percentage = 0
         for eight_match in eight_matches:
             if eight_match.won==True:
                 eight_wins += 1
                 print("8", eight_match.won)
-        print("8 please", eight_wins/eight_count)
+        eight_percentage = (eight_wins/eight_count)*100
 
         template = 'players/detail.html'
         context = {
             'player': player,
             'nine_matches': nine_matches,
             'eight_matches': eight_matches,
-            'nine_wins': nine_wins,
-            'eight_wins': eight_wins
+            'nine_percentage': nine_percentage,
+            'eight_percentage': eight_percentage
         }
 
         return render(request, template, context)
