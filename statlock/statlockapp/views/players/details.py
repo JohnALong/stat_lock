@@ -24,7 +24,10 @@ def player_details(request, player_id):
             if nine_match.won==True:
                 nine_wins += 1
                 print("9", nine_match.won)
-        nine_percentage = (nine_wins/nine_count)*100
+        try:        
+            nine_percentage = (nine_wins/nine_count)*100
+        except ZeroDivisionError:
+            nine_percentage = 0
 
         eight_count = player.match_set.filter(match_type=1).order_by('-id')[:20].count()
         print("count", eight_count)
@@ -37,8 +40,11 @@ def player_details(request, player_id):
             if eight_match.won==True:
                 eight_wins += 1
                 print("8", eight_match.won)
-        eight_percentage = (eight_wins/eight_count)*100
-
+        try:
+            eight_percentage = (eight_wins/eight_count)*100
+        except ZeroDivisionError:
+            eight_percentage = 0
+        
         template = 'players/detail.html'
         context = {
             'player': player,

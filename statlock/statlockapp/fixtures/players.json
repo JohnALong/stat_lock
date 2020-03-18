@@ -3,80 +3,330 @@
         "model": "statlockapp.player",
         "pk": 1,
         "fields": {
-            "name": "Player 1",
-            "eight_rating": 7,
-            "nine_rating": 9,
-            "team": 1
+            "name": "Pig Pen Hammontree",
+            "eight_rating": 5,
+            "nine_rating": 5,
+            "team": 2
         }
     },
     {
         "model": "statlockapp.player",
         "pk": 2,
         "fields": {
-            "name": "Player 2",
-            "eight_rating": 5,
+            "name": "Joey Heuring",
+            "eight_rating": 6,
             "nine_rating": 6,
-            "team": 1
+            "team": 2
         }
     },
     {
         "model": "statlockapp.player",
         "pk": 3,
         "fields": {
-            "name": "Player 3",
-            "eight_rating": 5,
-            "nine_rating": 5,
-            "team": 1
+            "name": "Jeff Mathis",
+            "eight_rating": 4,
+            "nine_rating": 4,
+            "team": 2
         }
     },
     {
         "model": "statlockapp.player",
         "pk": 4,
         "fields": {
-            "name": "Player 4",
-            "eight_rating": 5,
+            "name": "Ron Hammontree",
+            "eight_rating": 4,
             "nine_rating": 5,
-            "team": 1
+            "team": 2
         }
     },
     {
         "model": "statlockapp.player",
         "pk": 5,
         "fields": {
-            "name": "Player 5",
-            "eight_rating": 4,
-            "nine_rating": 4,
-            "team": 1
+            "name": "Jordan Sanders",
+            "eight_rating": 7,
+            "nine_rating": 7,
+            "team": 2
         }
     },
     {
         "model": "statlockapp.player",
         "pk": 6,
         "fields": {
-            "name": "Player 6",
-            "eight_rating": 3,
+            "name": "Jeff Meuir",
+            "eight_rating": 4,
             "nine_rating": 3,
-            "team": 1
+            "team": 2
         }
     },
     {
         "model": "statlockapp.player",
         "pk": 7,
         "fields": {
-            "name": "Player 7",
-            "eight_rating": 2,
-            "nine_rating": 3,
-            "team": 1
+            "name": "Jeff Meuir II",
+            "eight_rating": 4,
+            "nine_rating": 4,
+            "team": 2
         }
     },
     {
         "model": "statlockapp.player",
         "pk": 8,
         "fields": {
-            "name": "Player 8",
+            "name": "Marcia Warren",
             "eight_rating": 2,
             "nine_rating": 1,
-            "team": 1
+            "team": 2
+        }
+    },
+    {
+        "model": "statlockapp.player",
+        "pk": 9,
+        "fields": {
+            "name": "Youn Gonzales",
+            "eight_rating": 7,
+            "nine_rating": 8,
+            "team": 3
+        }
+    },
+    {
+        "model": "statlockapp.player",
+        "pk": 9,
+        "fields": {
+            "name": "Larry Patrick",
+            "eight_rating": 5,
+            "nine_rating": 4,
+            "team": 3
+        }
+    },
+    {
+        "model": "statlockapp.player",
+        "pk": 10,
+        "fields": {
+            "name": "Sherry Patrick",
+            "eight_rating": 2,
+            "nine_rating": 2,
+            "team": 3
+        }
+    },
+    {
+        "model": "statlockapp.player",
+        "pk": 11,
+        "fields": {
+            "name": "Mike Snider",
+            "eight_rating": 5,
+            "nine_rating": 6,
+            "team": 3
+        }
+    },
+    {
+        "model": "statlockapp.player",
+        "pk": 12,
+        "fields": {
+            "name": "Leah Pearman",
+            "eight_rating": 2,
+            "nine_rating": 2,
+            "team": 3
+        }
+    },
+    {
+        "model": "statlockapp.player",
+        "pk": 13,
+        "fields": {
+            "name": "Skylar Brown",
+            "eight_rating": 7,
+            "nine_rating": 9,
+            "team": 3
+        }
+    },
+    {
+        "model": "statlockapp.player",
+        "pk": 14,
+        "fields": {
+            "name": "James Long",
+            "eight_rating": 3,
+            "nine_rating": 2,
+            "team": 3
+        }
+    },
+    {
+        "model": "statlockapp.player",
+        "pk": 15,
+        "fields": {
+            "name": "Gary Reeves",
+            "eight_rating": 5,
+            "nine_rating": 5,
+            "team": 3
+        }
+    },
+    {
+        "model": "statlockapp.player",
+        "pk": 16,
+        "fields": {
+            "name": "Michael Goodman",
+            "eight_rating": 3,
+            "nine_rating": 3,
+            "team": 3
+        }
+    },
+    {
+        "model": "statlockapp.player",
+        "pk": 17,
+        "fields": {
+            "name": "Richard Surface",
+            "eight_rating": 5,
+            "nine_rating": 5,
+            "team": 4
+        }
+    },
+    {
+        "model": "statlockapp.player",
+        "pk": 18,
+        "fields": {
+            "name": "Wendy Way",
+            "eight_rating": 4,
+            "nine_rating": 4,
+            "team": 4
+        }
+    },
+    {
+        "model": "statlockapp.player",
+        "pk": 19,
+        "fields": {
+            "name": "Betty Hendrickson",
+            "eight_rating": 3,
+            "nine_rating": 3,
+            "team": 4
+        }
+    },
+    {
+        "model": "statlockapp.player",
+        "pk": 20,
+        "fields": {
+            "name": "Buck Mons",
+            "eight_rating": 6,
+            "nine_rating": 6,
+            "team": 4
+        }
+    },
+    {
+        "model": "statlockapp.player",
+        "pk": 21,
+        "fields": {
+            "name": "Rusty Hendrickson",
+            "eight_rating": 5,
+            "nine_rating": 5,
+            "team": 4
+        }
+    },
+    {
+        "model": "statlockapp.player",
+        "pk": 22,
+        "fields": {
+            "name": "Shane McCutchen",
+            "eight_rating": 7,
+            "nine_rating": 8,
+            "team": 4
+        }
+    },
+    {
+        "model": "statlockapp.player",
+        "pk": 23,
+        "fields": {
+            "name": "Tina McCutchen",
+            "eight_rating": 2,
+            "nine_rating": 2,
+            "team": 4
+        }
+    },
+    {
+        "model": "statlockapp.player",
+        "pk": 24,
+        "fields": {
+            "name": "Lydia Marshall",
+            "eight_rating": 2,
+            "nine_rating": 2,
+            "team": 4
+        }
+    },
+    {
+        "model": "statlockapp.player",
+        "pk": 25,
+        "fields": {
+            "name": "Tracy Dietrich",
+            "eight_rating": 7,
+            "nine_rating": 9,
+            "team": 5
+        }
+    },
+    {
+        "model": "statlockapp.player",
+        "pk": 26,
+        "fields": {
+            "name": "John Long",
+            "eight_rating": 6,
+            "nine_rating": 7,
+            "team": 5
+        }
+    },
+    {
+        "model": "statlockapp.player",
+        "pk": 27,
+        "fields": {
+            "name": "Jeanne Long",
+            "eight_rating": 5,
+            "nine_rating": 6,
+            "team": 5
+        }
+    },
+    {
+        "model": "statlockapp.player",
+        "pk": 28,
+        "fields": {
+            "name": "Matt Holloway",
+            "eight_rating": 5,
+            "nine_rating": 5,
+            "team": 5
+        }
+    },
+    {
+        "model": "statlockapp.player",
+        "pk": 29,
+        "fields": {
+            "name": "Blendal Hull",
+            "eight_rating": 5,
+            "nine_rating": 5,
+            "team": 5
+        }
+    },
+    {
+        "model": "statlockapp.player",
+        "pk": 30,
+        "fields": {
+            "name": "Charles Maca",
+            "eight_rating": 4,
+            "nine_rating": 3,
+            "team": 5
+        }
+    },
+    {
+        "model": "statlockapp.player",
+        "pk": 31,
+        "fields": {
+            "name": "Brittany Dietrich",
+            "eight_rating": 3,
+            "nine_rating": 3,
+            "team": 5
+        }
+    },
+    {
+        "model": "statlockapp.player",
+        "pk": 32,
+        "fields": {
+            "name": "Alexi Vaughn",
+            "eight_rating": 2,
+            "nine_rating": 3,
+            "team": 5
         }
     }
 ]

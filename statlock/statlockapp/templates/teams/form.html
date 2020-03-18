@@ -1,0 +1,19 @@
+
+{% extends 'shared/base.html' %}
+{% load static %}
+
+{% block content %}
+    <h1>Add Team</h1>
+
+
+
+    <form action="{% url 'statlockapp:team_form' %}" method="post">
+    {% csrf_token %}
+        <fieldset>
+            <fieldset>
+            <label for="name">Team Name: </label>
+            <input id="name" type="text" name="name" placeholder="team name">
+        </fieldset>
+            <input type="submit" value="Create Team" />
+    </form>
+{% endblock %}

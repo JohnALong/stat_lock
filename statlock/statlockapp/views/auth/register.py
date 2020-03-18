@@ -1,5 +1,6 @@
 import sqlite3
 from django.views.decorators.csrf import csrf_exempt
+from django.contrib.auth import authenticate, login
 from django.shortcuts import render, redirect, reverse
 from django.contrib.auth.models import User
 from statlockapp.models import Captain, Team
@@ -33,8 +34,9 @@ def register(request):
             user=new_user,
             team_id=form_data['team']
         )
-
-        new_captain.save()
+        new_user = authenticate(username=form_data['username'], password=form_data['password'],
+                                    )
+        login(request, new_user)
 
     return redirect(reverse('statlockapp:team'))
 

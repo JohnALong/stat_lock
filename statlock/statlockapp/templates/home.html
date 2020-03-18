@@ -5,5 +5,9 @@
 
     <h1>Statlock</h1>
     <h3>Track your stats and Vegas is a lock!</h3>
+    <form action="{% url 'statlockapp:team_form' %}" method="GET">
+            {% csrf_token %}
+            <button>Add Team</button>
+        </form>
 
 {% endblock %}
