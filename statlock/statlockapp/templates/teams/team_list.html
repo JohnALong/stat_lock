@@ -4,6 +4,10 @@
 {% block content %}
     <h1>My Team</h1>
     <div>{{ team.name }}</div>
+    <form action="{% url 'statlockapp:lineup' %}" method="GET">
+        {% csrf_token %}
+        <button>See Lineups</button>
+    </form>
     <form action="{% url 'statlockapp:player_form' %}" method="GET">
         {% csrf_token %}
         <button>Add Player</button>
@@ -13,9 +17,8 @@
         <button>Match Entry</button>
     </form>
     {% for player in all_players %}
-        <li>
-            <a href="{% url 'statlockapp:player' player.id %}">{{ player.name }} {{ player.eight_rating }} {{ player.nine_rating }} {{ player.team_id }}
-        </li>
-        </li>
+        <ul>
+            <a href="{% url 'statlockapp:player' player.id %}">{{ forloop.counter }}  {{ player.name }} {{ player.eight_rating }} {{ player.nine_rating }}
+        </ul>
     {% endfor %}
 {% endblock %}

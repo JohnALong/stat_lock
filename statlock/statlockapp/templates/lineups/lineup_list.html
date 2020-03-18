@@ -1,0 +1,20 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+
+{% block content %}
+    <h1>My Lineups</h1>
+    <h3>{{ team.name }}</h3>
+    <h4>8 Ball Lineups</h4>
+    {% for eight_under_23 in eight_under_23s %}
+        <ul>
+         {{ forloop.counter }} : {{ eight_under_23 }}
+        </ul>
+    {% endfor %}
+    <h3>{{ team.name }}</h3>
+    <h4>9 Ball Lineups</h4>
+    {% for nine_under_23 in nine_under_23s %}
+        <ul>
+         {{ forloop.counter }} : {{ nine_under_23 }}
+        </ul>
+    {% endfor %}
+{% endblock %}

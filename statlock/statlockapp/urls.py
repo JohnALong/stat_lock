@@ -6,6 +6,7 @@ app_name = "statlockapp"
 urlpatterns = [
     path('', home, name='home'),
     path('team/', team_list, name='team'),
+    path('lineup/', lineup_list, name='lineup'),
     path('accounts/', include('django.contrib.auth.urls')),
     path('logout/', logout_user, name='logout'),
     path('register/', register, name='register'),
