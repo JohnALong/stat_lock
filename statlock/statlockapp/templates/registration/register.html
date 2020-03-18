@@ -4,8 +4,8 @@
 {% block content %}
     <h1>Register new Captain</h1>
 
-
     <form action="{% url 'statlockapp:register' %}" method="post">
+    {% csrf_token %}
       <fieldset>
           <label for="username">Username: </label>
           <input id="username" type="text" name="username">
@@ -34,7 +34,7 @@
           <label for="team">Team: </label>
           <select id="team" type="text" name="team">
                 {% for team in all_teams %}
-                    <option value="{{ team.id }}">{{ team.name }} {{ team.id}} </option>
+                    <option value="{{ team.id }}">{{ team.name }} </option>
                 {% endfor %}
           </select>
       </fieldset>

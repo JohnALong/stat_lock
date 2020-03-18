@@ -7,9 +7,9 @@ from ..connection import Connection
 
 @login_required
 def match_form(request):
-
+# team = Team.objects.get(id=request.user.captain.team_id)
     if request.method == 'GET':
-        all_players = Player.objects.all()
+        all_players = Player.objects.filter(team_id=request.user.captain.team_id)
         all_matchtypes = MatchType.objects.all()
 
         template = 'matches/form.html'
@@ -39,7 +39,7 @@ def match_edit_form(request, match_id):
         match = Match.objects.get(id=match_id)
         print(match.won)
         all_matchtypes = MatchType.objects.all()
-        all_players = Player.objects.all()
+        all_players = Player.objects.filter(id=match.player_id)
 
         template = 'matches/form.html'
         context = {
