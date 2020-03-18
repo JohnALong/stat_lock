@@ -12,7 +12,7 @@ def team_list(request):
         print("team name", team.name)
 
 
-        # template = 'teams/team_list.html'
+        template = 'teams/team_list.html'
         context = {
             'all_players': team_members.values(),
             'team': team
