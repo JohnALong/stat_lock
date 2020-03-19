@@ -2,8 +2,12 @@
 {% extends 'shared/base.html' %}
 {% load static %}
 
+{% block css %}
+    <link rel="stylesheet" href="{% static 'styles/lineups.css' %}" />
+{% endblock %}
+
 {% block content %}
-    <h1>Add/Edit Match</h1>
+    <h1 class="title">Add/Edit Match</h1>
 
 
 {% if player.id is not None %}
@@ -12,29 +16,30 @@
     <form action="{% url 'statlockapp:match_form' %}" method="post">
 {% endif %}
     {% csrf_token %}
-        <fieldset>
-            <label for="won">Check for Match Won: </label>
-            <input type="radio" value="True" name='won'>
-        </fieldset>
-        <fieldset>
+        <fieldset class="matchentry">
             <label for="matchtype">Match Type: </label>
-            <select id="player" type="text" name="player">
-                {% for player in all_players %}
-                    <option {% if player.id == match.player_id %}selected{% endif %} value="{{ player.id }}">{{ player.name }} </option>
-                {% endfor %}
-            </select>
             <select id="matchtype" type="text" name="matchtype">
                 {% for matchtype in all_matchtypes %}
                     <option {% if matchtype.id == match.match_type_id %}selected{% endif %} value="{{ matchtype.id }}">{{ matchtype.name }} </option>
                 {% endfor %}
             </select>
+            <label for="matchtype">Player: </label>
+            <select id="player" type="text" name="player">
+                {% for player in all_players %}
+                    <option {% if player.id == match.player_id %}selected{% endif %} value="{{ player.id }}">{{ player.name }} </option>
+                {% endfor %}
+            </select>
+        </fieldset>
+        <fieldset class="title">
+            <label for="won">Check for Match Won: </label>
+            <input type="radio" value="True" name='won'>
         </fieldset>
 
         {% if match.id is not None %}
             <input type="hidden" name="actual_method" value="PUT">
-            <input type="submit" value="Update Match" />
+            <input type="submit" value="Update Match" class="btn btn-primary btn-lg btn-block"/>
         {% else %}
-            <input type="submit" value="Add Match" />
+            <input type="submit" value="Add Match" class="btn btn-primary btn-lg btn-block"/>
         {% endif %}
     </form>
 {% endblock %}

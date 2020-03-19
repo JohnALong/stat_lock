@@ -1,0 +1,58 @@
+.lineups {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.lineup {
+    flex-basis: 20%;
+    padding: 0 2em 0.5em 2em;
+    border: 1px solid gray;
+    margin: 1em;
+    padding: 1.5em;
+}
+
+.title {
+    text-align: center;
+}
+
+.column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.teambuttons {
+    display: flex;
+    justify-content: center;
+}
+
+.detailbuttons {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.matchentry {
+    display: flex;
+}
+
+.details {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo-image {
+    width: 100%;
+    height: 800px;
+    /* height: 46px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-top: -6px; */
+} 
