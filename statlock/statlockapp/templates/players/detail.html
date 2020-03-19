@@ -1,31 +1,44 @@
 {% extends 'shared/base.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'styles/lineups.css' %}" />
+{% endblock %}
 
 {% block content %}
-    <h1>{{ player.name }} on {{ player.team }}</h1>
-    <h3>is at {{ nine_percentage }}% in 9 Ball and {{ eight_percentage }} in 8 ball.</h3>
-    <form action="{% url 'statlockapp:player' player.id %}" method="POST">
-    {% csrf_token %}
-        <input type="hidden" name="actual_method" value="DELETE">
-        <button>Delete Player</button>
-    </form>
-    <form action="{% url 'statlockapp:player_edit_form' player.id %}" method="GET">
+    <h1 class="title">{{ player.name }} on {{ player.team }}</h1>
+    <h3 class="title">is at {{ nine_percentage }}% in 9 Ball and {{ eight_percentage }} in 8 ball.</h3>
+    <div class="detailbuttons">
+        <form action="{% url 'statlockapp:player_edit_form' player.id %}" method="GET">
+            {% csrf_token %}
+            <button class="btn btn-outline-success btn-lg">Edit Player</button>
+        </form>
+        <form action="{% url 'statlockapp:player' player.id %}" method="POST">
         {% csrf_token %}
-        <button>Edit Player</button>
-    </form>
-    {% for eight_match in eight_matches %}
-        {{ forloop.counter }} : {{ eight_match.eight_match.date }}
-            {{ eight_match.date }} {{ eight_match.match_type }} {{ eight_match.won }}
-        <form action="{% url 'statlockapp:match_edit_form' eight_match.id %}" method="GET">
-            {% csrf_token %}
-            <button>Edit Match</button>
+            <input type="hidden" name="actual_method" value="DELETE">
+            <button class="btn btn-outline-danger btn-lg">Delete Player</button>
         </form>
-    {% endfor %}
-    {% for nine_match in nine_matches %}
-        {{ forloop.counter }} : {{ nine_match.nine_match.date }}
-            {{ nine_match.date }} {{ nine_match.match_type }} {{ nine_match.won }}
-        <form action="{% url 'statlockapp:match_edit_form' nine_match.id %}" method="GET">
-            {% csrf_token %}
-            <button>Edit Match</button>
-        </form>
-    {% endfor %}
+    </div>
+    <div class="details">
+        <div>
+            {% for eight_match in eight_matches %}
+                {{ forloop.counter }} : {{ eight_match.eight_match.date }}
+                    {{ eight_match.date }} {{ eight_match.match_type }} {{ eight_match.won }}
+                <form action="{% url 'statlockapp:match_edit_form' eight_match.id %}" method="GET">
+                    {% csrf_token %}
+                    <button class="btn btn-outline-primary btn-lg">Edit Match</button>
+                </form>
+            {% endfor %}
+        </div>
+        <div>
+            {% for nine_match in nine_matches %}
+                {{ forloop.counter }} : {{ nine_match.nine_match.date }}
+                    {{ nine_match.date }} {{ nine_match.match_type }} {{ nine_match.won }}
+                <form action="{% url 'statlockapp:match_edit_form' nine_match.id %}" method="GET">
+                    {% csrf_token %}
+                    <button class="btn btn-outline-primary btn-lg">Edit Match</button>
+                </form>
+            {% endfor %}
+        </div>
+    </div>
 {% endblock %}

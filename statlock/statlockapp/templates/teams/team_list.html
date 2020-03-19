@@ -1,24 +1,32 @@
 {% extends 'shared/base.html' %}
 {% load static %}
 
+{% block css %}
+    <link rel="stylesheet" href="{% static 'styles/lineups.css' %}" />
+{% endblock %}
+
 {% block content %}
-    <h1>My Team</h1>
-    <div>{{ team.name }}</div>
-    <form action="{% url 'statlockapp:lineup' %}" method="GET">
-        {% csrf_token %}
-        <button>See Lineups</button>
-    </form>
-    <form action="{% url 'statlockapp:player_form' %}" method="GET">
-        {% csrf_token %}
-        <button>Add Player</button>
-    </form>
-    <form action="{% url 'statlockapp:match_form' %}" method="GET">
-        {% csrf_token %}
-        <button>Match Entry</button>
-    </form>
+    <h1 class="title">My Team</h1>
+    <div class="title">{{ team.name }}</div>
+    <div class="teambuttons">
+        <form action="{% url 'statlockapp:lineup' %}" method="GET">
+            {% csrf_token %}
+            <button class="btn btn-outline-primary btn-lg">Lineups</button>
+        </form>
+        <form action="{% url 'statlockapp:player_form' %}" method="GET">
+            {% csrf_token %}
+            <button class="btn btn-outline-danger btn-lg">Add Player</button>
+        </form>
+        <form action="{% url 'statlockapp:match_form' %}" method="GET">
+            {% csrf_token %}
+            <button class="btn btn-outline-success btn-lg">Match Entry</button>
+        </form>
+    </div>
     {% for player in all_players %}
-        <ul>
-            <a href="{% url 'statlockapp:player' player.id %}">{{ forloop.counter }}  {{ player.name }} {{ player.eight_rating }} {{ player.nine_rating }}
+        <ul class="list-group">
+            <li class="list-group-item">
+                <a href="{% url 'statlockapp:player' player.id %}">{{ forloop.counter }}:  {{ player.name }}</a>: 8 ball rank: {{ player.eight_rating }} / 9 ball rank: {{ player.nine_rating }}
+            </li>
         </ul>
     {% endfor %}
 {% endblock %}

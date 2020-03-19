@@ -1,44 +1,49 @@
 {% extends 'shared/base.html' %}
 {% load static %}
 
+{% block css %}
+    <link rel="stylesheet" href="{% static 'styles/lineups.css' %}" />
+{% endblock %}
+
 {% block content %}
-    <h1>Register new Captain</h1>
+    <h1 class="title">Register new Captain</h1>
 
     <form action="{% url 'statlockapp:register' %}" method="post">
     {% csrf_token %}
-      <fieldset>
-          <label for="username">Username: </label>
-          <input id="username" type="text" name="username">
-      </fieldset>
-      <fieldset>
-          <label for="first_name">First name: </label>
-          <input id="first_name" type="text" name="first_name">
-      </fieldset>
-      <fieldset>
-          <label for="last_name">Last name: </label>
-          <input id="last_name" type="text" name="last_name">
-      </fieldset>
-      <fieldset>
-          <label for="email">Email: </label>
-          <input id="email" type="text" name="email">
-      </fieldset>
-      <fieldset>
-          <label for="password">Password: </label>
-          <input id="password" type="text" name="password">
-      </fieldset>
-      <fieldset>
-          <label for="password">Confirm Password: </label>
-          <input id="password" type="text" name="password">
-      </fieldset>
-      <fieldset>
-          <label for="team">Team: </label>
-          <select id="team" type="text" name="team">
-                {% for team in all_teams %}
-                    <option value="{{ team.id }}">{{ team.name }} </option>
-                {% endfor %}
-          </select>
-      </fieldset>
-
-      <input type="submit" value="Register" />
+    <div class="form-group">
+        <fieldset>
+            <label for="username">Username: </label>
+            <input id="username" class="form-control" type="text" name="username">
+        </fieldset>
+        <fieldset>
+            <label for="first_name">First name: </label>
+            <input id="first_name" class="form-control" type="text" name="first_name">
+        </fieldset>
+        <fieldset>
+            <label for="last_name">Last name: </label>
+            <input id="last_name" class="form-control" type="text" name="last_name">
+        </fieldset>
+        <fieldset>
+            <label for="email">Email: </label>
+            <input id="email" class="form-control" type="text" name="email">
+        </fieldset>
+        <fieldset>
+            <label for="password">Password: </label>
+            <input id="password" class="form-control" type="text" name="password">
+        </fieldset>
+        <fieldset>
+            <label for="password">Confirm Password: </label>
+            <input id="password" class="form-control" type="text" name="password">
+        </fieldset>
+        <fieldset>
+            <label for="team">Team: </label>
+            <select id="team" class="form-control" type="text" name="team">
+                    {% for team in all_teams %}
+                        <option value="{{ team.id }}">{{ team.name }} </option>
+                    {% endfor %}
+            </select>
+        </fieldset>
+        </div>  
+        <input type="submit" class="btn btn-outline-primary btn-lg btn-block" value="Register" />
     </form>
 {% endblock %}

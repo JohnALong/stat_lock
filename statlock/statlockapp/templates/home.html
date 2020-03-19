@@ -1,13 +1,18 @@
 {% extends 'shared/base.html' %}
 {% load static %}
 
+{% block css %}
+    <link rel="stylesheet" href="{% static 'styles/lineups.css' %}" />
+{% endblock %}
+
 {% block content %}
 
-    <h1>Statlock</h1>
-    <h3>Track your stats and Vegas is a lock!</h3>
+    <h1 class="title">Statlock</h1>
+    <h3 class="title">Track your stats and Vegas is a lock!</h3>
     <form action="{% url 'statlockapp:team_form' %}" method="GET">
             {% csrf_token %}
-            <button>Add Team</button>
+            <h5 class="title">If your team was not listed at register:</h5>
+            <button class="btn btn-success btn-lg btn-block">Add Team</button>
         </form>
 
 {% endblock %}
