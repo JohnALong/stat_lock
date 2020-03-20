@@ -25,7 +25,7 @@
     {% for player in all_players %}
         <ul class="list-group">
             <li class="list-group-item">
-                <a href="{% url 'statlockapp:player' player.id %}">{{ forloop.counter }}:  {{ player.name }}</a>: 8 ball rank: {{ player.eight_rating }} / 9 ball rank: {{ player.nine_rating }}
+                <a href="{% url 'statlockapp:player' player.id %}">{{ forloop.counter }}:  {{ player.name }}</a>: 8-ball rank: {{ player.eight_rating }} :--: 9-ball rank: {{ player.nine_rating }}
             </li>
         </ul>
     {% endfor %}

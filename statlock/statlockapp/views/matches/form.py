@@ -37,15 +37,16 @@ def match_edit_form(request, match_id):
 
     if request.method == 'GET':
         match = Match.objects.get(id=match_id)
-        print(match.won)
+        print("check for right form", match.id)
         all_matchtypes = MatchType.objects.all()
         all_players = Player.objects.filter(id=match.player_id)
-
+        print("ryans print", all_players[0].id)
         template = 'matches/form.html'
         context = {
             'match': match,
             'all_matchtypes': all_matchtypes,
-            'all_players': all_players
+            'all_players': all_players,
+            'player': all_players[0]
         }
 
         return render(request, template, context)
