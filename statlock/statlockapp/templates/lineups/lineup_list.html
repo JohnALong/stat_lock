@@ -7,6 +7,14 @@
 
 {% block content %}
     <h1 class="title">My Lineups</h1>
+    {% comment %} start of loop for radio buttons {% endcomment %}
+    <div class="myopponent">
+        <h4>Select Opponent to see all Lineups:</h4>
+        {% for opp_team in opp_teams %}
+            <a href="{% url 'statlockapp:opplineup' opp_team.id %}">{{ forloop.counter }}: {{ opp_team.name }}</a>
+        {% endfor %}
+    </div>
+    {% comment %} end of loop for radio buttons {% endcomment %}
     <div class="row">
         <div class="column">
             <h3 class="title">{{ team.name }}</h3>

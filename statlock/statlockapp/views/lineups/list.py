@@ -10,6 +10,7 @@ def lineup_list(request):
     if request.method == 'GET':
         team = Team.objects.get(id=request.user.captain.team_id)
         team_members = Player.objects.filter(team__id=request.user.captain.team_id)
+        opp_teams = Team.objects.all()
         eight_ratings = []
         nine_ratings = []
         for member in team_members:
@@ -60,6 +61,7 @@ def lineup_list(request):
         context = {
             'all_players': team_members.values(),
             'team': team,
+            'opp_teams': opp_teams,
             'eight_under_23s': eight_under_23s,
             'nine_under_23s': nine_under_23s
         }

@@ -1,0 +1,43 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'styles/lineups.css' %}" />
+{% endblock %}
+
+{% block content %}
+    <h1 class="title">All Lineups</h1>
+    <div class="row">
+        <div class="column">
+            <h3 class="title">{{ user_team.name }}</h3>
+            <h4 class="lineups">8 Ball Lineups</h4>
+            {% for user_eight_under_23 in user_eight_under_23s %}
+                <ul class="lineup">
+                {{ forloop.counter }} : {{ user_eight_under_23 }}
+                </ul>
+            {% endfor %}
+        </div>
+    </div>
+    <h3 class="opp_eight">Opponent 8 Ball</h3>
+    <div class="column">
+            <h3 class="title">{{ user_team.name }}</h3>
+            <h4 class="lineups">9 Ball Lineups</h4>
+            {% for user_nine_under_23 in user_nine_under_23s %}
+            <ul class="lineup">
+                {{ forloop.counter }} : {{ user_nine_under_23 }}
+            </ul>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="column">
+            <h3 class="title">{{ opp_team.name }}</h3>
+            <h4 class="lineups">9 Ball Lineups</h4>
+            {% for opp_nine_under_23 in opp_nine_under_23s %}
+            <ul class="lineup">
+                {{ forloop.counter }} : {{ opp_nine_under_23 }}
+            </ul>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}
