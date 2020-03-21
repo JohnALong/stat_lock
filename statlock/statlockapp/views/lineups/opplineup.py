@@ -37,6 +37,22 @@ def opp_lineup(request, team_id):
                 opp_nine_under_23s.append(opp_nine_no_duplicate)
         print("23 check", opp_nine_under_23s)
 
+        # start of opp 8 ball data
+        opp_eight_combos = list(combinations(opp_eight_ratings, 5))
+        opp_eight_listed_combos = list(map(list, opp_eight_combos))
+        opp_eight_no_duplicates = []
+        opp_eight_under_23s = []
+        for opp_eight_listed_combo in opp_eight_listed_combos:
+            opp_eight_listed_combo.sort()
+            if opp_eight_listed_combo not in opp_eight_no_duplicates:
+                opp_eight_no_duplicates.append(opp_eight_listed_combo)
+
+        # print("no duplicates", nine_no_duplicates)
+        for opp_eight_no_duplicate in opp_eight_no_duplicates:
+            if sum(opp_eight_no_duplicate) <= 23 and opp_eight_no_duplicate not in opp_eight_under_23s:
+                opp_eight_under_23s.append(opp_eight_no_duplicate)
+        print("23 check 8's", opp_eight_under_23s)
+
         user_team_members = Player.objects.filter(team__id=request.user.captain.team_id)
         user_eight_ratings = []
         user_nine_ratings = []
@@ -93,7 +109,7 @@ def opp_lineup(request, team_id):
             'user_eight_under_23s': user_eight_under_23s,
             'user_nine_under_23s': user_nine_under_23s,
             'opp_nine_under_23s': opp_nine_under_23s,
-
+            'opp_eight_under_23s': opp_eight_under_23s
         }
 
         return render(request, template, context)

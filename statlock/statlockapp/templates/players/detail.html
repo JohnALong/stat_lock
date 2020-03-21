@@ -7,7 +7,7 @@
 
 {% block content %}
     <h1 class="title">{{ player.name }} on {{ player.team }}</h1>
-    <h3 class="title">is at {{ nine_percentage }}% in 9 Ball and {{ eight_percentage }} in 8 ball.</h3>
+    <h3 class="title">is at {{ eight_percentage|floatformat:2 }}% in 8 Ball and {{ nine_percentage|floatformat:2 }}% in 9 ball.</h3>
     <div class="detailbuttons">
         <form action="{% url 'statlockapp:player_edit_form' player.id %}" method="GET">
             {% csrf_token %}
