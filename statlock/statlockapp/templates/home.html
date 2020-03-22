@@ -10,7 +10,7 @@
     <h1 class="title">Statlock</h1>
     <form action="{% url 'statlockapp:team' %}" method="GET">
     {% csrf_token %}
-        <button class="btn btn-success btn-lg btn-block">Your Team</button>
+        <button class="btn btn-success btn-lg btn-block">My Team</button>
     </form>
     <form action="{% url 'statlockapp:team_form' %}" method="GET">
         {% csrf_token %}
