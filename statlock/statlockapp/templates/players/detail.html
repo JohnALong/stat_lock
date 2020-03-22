@@ -24,7 +24,7 @@
             {% for eight_match in eight_matches %}
                 {{ forloop.counter }} : {{ eight_match.eight_match.date }}
                     {{ eight_match.date }} {{ eight_match.match_type }} {{ eight_match.won|yesno:"Won,Lost" }}
-                <form action="{% url 'statlockapp:match_edit_form' eight_match.id %}" method="GET">
+                <form class="detailbox" action="{% url 'statlockapp:match_edit_form' eight_match.id %}" method="GET">
                     {% csrf_token %}
                     <button class="btn btn-outline-primary btn-lg">Edit Match</button>
                 </form>
@@ -34,7 +34,7 @@
             {% for nine_match in nine_matches %}
                 {{ forloop.counter }} : {{ nine_match.nine_match.date }}
                     {{ nine_match.date }} {{ nine_match.match_type }} {{ nine_match.won|yesno:"Won,Lost" }}
-                <form action="{% url 'statlockapp:match_edit_form' nine_match.id %}" method="GET">
+                <form class="detailbox" action="{% url 'statlockapp:match_edit_form' nine_match.id %}" method="GET">
                     {% csrf_token %}
                     <button class="btn btn-outline-primary btn-lg">Edit Match</button>
                 </form>

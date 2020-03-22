@@ -5,7 +5,7 @@
         "fields": {
             "player": 1,
             "match_type": 1,
-            "date": "2019-10-07",
+            "date": "2019-10-16",
             "won": 0
         }
     },
@@ -14,8 +14,8 @@
         "pk": 2,
         "fields": {
             "player": 1,
-            "match_type": 2,
-            "date": "2019-10-07",
+            "match_type": 1,
+            "date": "2019-10-23",
             "won": 0
         }
     },
@@ -23,9 +23,9 @@
         "model": "statlockapp.match",
         "pk": 3,
         "fields": {
-            "player": 2,
+            "player": 1,
             "match_type": 1,
-            "date": "2019-10-07",
+            "date": "2019-10-30",
             "won": 0
         }
     },
@@ -33,9 +33,9 @@
         "model": "statlockapp.match",
         "pk": 4,
         "fields": {
-            "player": 2,
-            "match_type": 2,
-            "date": "2019-10-07",
+            "player": 1,
+            "match_type": 1,
+            "date": "2019-11-05",
             "won": 1
         }
     },
@@ -43,9 +43,9 @@
         "model": "statlockapp.match",
         "pk": 5,
         "fields": {
-            "player": 3,
+            "player": 1,
             "match_type": 1,
-            "date": "2019-10-07",
+            "date": "2019-11-12",
             "won": 1
         }
     },
@@ -53,9 +53,349 @@
         "model": "statlockapp.match",
         "pk": 6,
         "fields": {
-            "player": 3,
+            "player": 1,
+            "match_type": 1,
+            "date": "2019-11-19",
+            "won": 1
+        }
+    },
+    {
+        "model": "statlockapp.match",
+        "pk": 7,
+        "fields": {
+            "player": 1,
+            "match_type": 1,
+            "date": "2019-11-26",
+            "won": 0
+        }
+    },
+    {
+        "model": "statlockapp.match",
+        "pk": 8,
+        "fields": {
+            "player": 1,
+            "match_type": 1,
+            "date": "2019-12-4",
+            "won": 1
+        }
+    },
+    {
+        "model": "statlockapp.match",
+        "pk": 9,
+        "fields": {
+            "player": 1,
+            "match_type": 1,
+            "date": "2019-12-11",
+            "won": 0
+        }
+    },
+    {
+        "model": "statlockapp.match",
+        "pk": 10,
+        "fields": {
+            "player": 1,
+            "match_type": 1,
+            "date": "2019-12-18",
+            "won": 1
+        }
+    },
+    {
+        "model": "statlockapp.match",
+        "pk": 11,
+        "fields": {
+            "player": 1,
+            "match_type": 1,
+            "date": "2019-12-31",
+            "won": 0
+        }
+    },
+    {
+        "model": "statlockapp.match",
+        "pk": 12,
+        "fields": {
+            "player": 1,
+            "match_type": 1,
+            "date": "2020-01-07",
+            "won": 1
+        }
+    },
+    {
+        "model": "statlockapp.match",
+        "pk": 13,
+        "fields": {
+            "player": 1,
+            "match_type": 1,
+            "date": "2020-01-08",
+            "won": 0
+        }
+    },
+    {
+        "model": "statlockapp.match",
+        "pk": 14,
+        "fields": {
+            "player": 1,
+            "match_type": 1,
+            "date": "2020-01-15",
+            "won": 1
+        }
+    },
+    {
+        "model": "statlockapp.match",
+        "pk": 15,
+        "fields": {
+            "player": 1,
+            "match_type": 1,
+            "date": "2020-01-22",
+            "won": 0
+        }
+    },
+    {
+        "model": "statlockapp.match",
+        "pk": 16,
+        "fields": {
+            "player": 1,
+            "match_type": 1,
+            "date": "2020-01-29",
+            "won": 1
+        }
+    },
+    {
+        "model": "statlockapp.match",
+        "pk": 17,
+        "fields": {
+            "player": 1,
+            "match_type": 1,
+            "date": "2020-02-05",
+            "won": 0
+        }
+    },
+    {
+        "model": "statlockapp.match",
+        "pk": 18,
+        "fields": {
+            "player": 1,
+            "match_type": 1,
+            "date": "2020-02-12",
+            "won": 1
+        }
+    },
+    {
+        "model": "statlockapp.match",
+        "pk": 19,
+        "fields": {
+            "player": 1,
+            "match_type": 1,
+            "date": "2020-02-19",
+            "won": 0
+        }
+    },
+    {
+        "model": "statlockapp.match",
+        "pk": 20,
+        "fields": {
+            "player": 1,
+            "match_type": 1,
+            "date": "2020-02-26",
+            "won": 1
+        }
+    },
+    {
+        "model": "statlockapp.match",
+        "pk": 21,
+        "fields": {
+            "player": 1,
             "match_type": 2,
-            "date": "2019-10-07",
+            "date": "2019-10-16",
+            "won": 0
+        }
+    },
+    {
+        "model": "statlockapp.match",
+        "pk": 22,
+        "fields": {
+            "player": 1,
+            "match_type": 2,
+            "date": "2019-10-23",
+            "won": 1
+        }
+    },
+    {
+        "model": "statlockapp.match",
+        "pk": 23,
+        "fields": {
+            "player": 1,
+            "match_type": 2,
+            "date": "2019-10-30",
+            "won": 0
+        }
+    },
+    {
+        "model": "statlockapp.match",
+        "pk": 24,
+        "fields": {
+            "player": 1,
+            "match_type": 2,
+            "date": "2019-11-06",
+            "won": 1
+        }
+    },
+    {
+        "model": "statlockapp.match",
+        "pk": 25,
+        "fields": {
+            "player": 1,
+            "match_type": 2,
+            "date": "2019-11-13",
+            "won": 0
+        }
+    },
+    {
+        "model": "statlockapp.match",
+        "pk": 26,
+        "fields": {
+            "player": 1,
+            "match_type": 2,
+            "date": "2019-11-20",
+            "won": 1
+        }
+    },
+    {
+        "model": "statlockapp.match",
+        "pk": 27,
+        "fields": {
+            "player": 1,
+            "match_type": 2,
+            "date": "2019-11-27",
+            "won": 0
+        }
+    },
+    {
+        "model": "statlockapp.match",
+        "pk": 28,
+        "fields": {
+            "player": 1,
+            "match_type": 2,
+            "date": "2019-12-04",
+            "won": 0
+        }
+    },
+    {
+        "model": "statlockapp.match",
+        "pk": 29,
+        "fields": {
+            "player": 1,
+            "match_type": 2,
+            "date": "2019-12-11",
+            "won": 1
+        }
+    },
+    {
+        "model": "statlockapp.match",
+        "pk": 30,
+        "fields": {
+            "player": 1,
+            "match_type": 2,
+            "date": "2019-12-18",
+            "won": 0
+        }
+    },
+    {
+        "model": "statlockapp.match",
+        "pk": 31,
+        "fields": {
+            "player": 1,
+            "match_type": 2,
+            "date": "2019-12-25",
+            "won": 1
+        }
+    },
+    {
+        "model": "statlockapp.match",
+        "pk": 32,
+        "fields": {
+            "player": 1,
+            "match_type": 2,
+            "date": "2020-01-07",
+            "won": 0
+        }
+    },
+    {
+        "model": "statlockapp.match",
+        "pk": 33,
+        "fields": {
+            "player": 1,
+            "match_type": 2,
+            "date": "2020-01-14",
+            "won": 1
+        }
+    },
+    {
+        "model": "statlockapp.match",
+        "pk": 34,
+        "fields": {
+            "player": 1,
+            "match_type": 2,
+            "date": "2020-01-21",
+            "won": 0
+        }
+    },
+    {
+        "model": "statlockapp.match",
+        "pk": 35,
+        "fields": {
+            "player": 1,
+            "match_type": 2,
+            "date": "2020-01-28",
+            "won": 1
+        }
+    },
+    {
+        "model": "statlockapp.match",
+        "pk": 36,
+        "fields": {
+            "player": 1,
+            "match_type": 2,
+            "date": "2020-02-04",
+            "won": 1
+        }
+    },
+    {
+        "model": "statlockapp.match",
+        "pk": 37,
+        "fields": {
+            "player": 1,
+            "match_type": 2,
+            "date": "2020-02-11",
+            "won": 1
+        }
+    },
+    {
+        "model": "statlockapp.match",
+        "pk": 38,
+        "fields": {
+            "player": 1,
+            "match_type": 2,
+            "date": "2020-02-18",
+            "won": 0
+        }
+    },
+    {
+        "model": "statlockapp.match",
+        "pk": 39,
+        "fields": {
+            "player": 1,
+            "match_type": 2,
+            "date": "2020-02-25",
+            "won": 0
+        }
+    },
+    {
+        "model": "statlockapp.match",
+        "pk": 40,
+        "fields": {
+            "player": 1,
+            "match_type": 2,
+            "date": "2020-03-02",
             "won": 0
         }
     }
