@@ -60,3 +60,8 @@
 .playermatch {
     border-style: ridge;
 }
+
+.detailbox {
+    border-top-style: inset;
+    border-color: #027bff;
+}
