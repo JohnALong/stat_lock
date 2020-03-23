@@ -53,30 +53,31 @@ and compare them to each other.
 
 ## Instructions for Installing StatLock
 * Clone repo and cd into it
+* `cd statlock`
 
 * Create your OSX virtual environment in Terminal:
-  * python -m venv statlockenv
-  * source ./statlockenv/bin/activate
+  * `python -m venv statlockenv`
+  * `source ./statlockenv/bin/activate`
   
 * or Create your Windows virtual environment in Command Line:
-  * python -m venv statlockenv
-  * source ./statlockenv/Scripts/activate
+  * `python -m venv statlockenv`
+  * `source ./statlockenv/Scripts/activate`
   
 * Install the app dependencies:
-  * pip install -r requirements.txt
+  * `pip install -r requirements.txt`
   
 * Build your database from existing models:
-  * python manage.py makemigrations statlockapp
-  * python manage.py migrate
+  * `python manage.py makemigrations statlockapp`
+  * `python manage.py migrate`
   
 * Populate your database with initial data from fixtures (follow order listed)
-  * python manage.py loaddata teams
-  * python manage.py loaddata players
-  * python manage.py loaddata matchtypes
-  * python manage.py loaddata matches
+  * `python manage.py loaddata teams`
+  * `python manage.py loaddata players`
+  * `python manage.py loaddata matchtypes`
+  * `python manage.py loaddata matches`
   
 * Upon server start user will be able to register a Captain and select a listed team or select New Team to create their own.
-  * python manage.py runserver
+  * `python manage.py runserver`
   * open a browser and and access the application
   * http://localhost:8000
   
