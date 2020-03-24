@@ -7,17 +7,21 @@
 
 {% block content %}
     <div class="homebackground">
-    <h1 class="title">Statlock</h1>
+    {% comment %} <h1 class="title">Statlock</h1> {% endcomment %}
     <form action="{% url 'statlockapp:team' %}" method="GET">
     {% csrf_token %}
-        <button class="btn btn-success btn-lg btn-block">My Team</button>
+    <div id="homebutton">
+        <button class="btn btn-secondary btn-lg">My Team</button>
+    </div>
     </form>
     <form action="{% url 'statlockapp:team_form' %}" method="GET">
         {% csrf_token %}
         <h5 class="title">If your team was not listed at register:</h5>
-        <button class="btn btn-success btn-lg btn-block">Add Team</button>
+        <div id="homebutton">
+            <button class="btn btn-secondary btn-lg">Add Team</button>
+        </div>
     </form>
-        <img class="logo-image" src="{% static "styles/images/logo.png" %}" alt="logo">
+        {% comment %} <img class="logo-image" src="{% static "styles/images/logo.png" %}" alt="logo"> {% endcomment %}
     </div>
 
 {% endblock %}

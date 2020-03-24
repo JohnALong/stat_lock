@@ -32,7 +32,7 @@ def match_details(request, match_id):
         ):
             match_won = form_data.get("won", False)
             match_to_update = Match.objects.get(pk=match_id)
-            print("match to update", match_to_update.id)
+            # print("match to update", match_to_update.id)
 
             match_to_update.won = match_won
             match_to_update.match_type_id = form_data['matchtype']
