@@ -13,7 +13,7 @@ def opp_lineup(request, team_id):
     if request.method == 'GET':
         user_team = Team.objects.get(id=request.user.captain.team_id)
         opp_team = Team.objects.get(id=team_id)
-        print("opp team", opp_team.name)
+        # print("opp team", opp_team.name)
         # print("user team", user_team.name)
         opp_players = Player.objects.filter(team_id=team_id)
         opp_eight_ratings = []
@@ -35,7 +35,7 @@ def opp_lineup(request, team_id):
         for opp_nine_no_duplicate in opp_nine_no_duplicates:
             if sum(opp_nine_no_duplicate) <= 23 and opp_nine_no_duplicate not in opp_nine_under_23s:
                 opp_nine_under_23s.append(opp_nine_no_duplicate)
-        print("23 check", opp_nine_under_23s)
+        # print("23 check", opp_nine_under_23s)
 
         # start of opp 8 ball data
         opp_eight_combos = list(combinations(opp_eight_ratings, 5))
@@ -51,7 +51,7 @@ def opp_lineup(request, team_id):
         for opp_eight_no_duplicate in opp_eight_no_duplicates:
             if sum(opp_eight_no_duplicate) <= 23 and opp_eight_no_duplicate not in opp_eight_under_23s:
                 opp_eight_under_23s.append(opp_eight_no_duplicate)
-        print("23 check 8's", opp_eight_under_23s)
+        # print("23 check 8's", opp_eight_under_23s)
 
         user_team_members = Player.objects.filter(team__id=request.user.captain.team_id)
         user_eight_ratings = []

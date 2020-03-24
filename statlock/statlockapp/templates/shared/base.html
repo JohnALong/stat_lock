@@ -14,18 +14,18 @@
 </head>
 
 <body>
-    <nav id="site-nav" class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav id="site-nav" class="navbar navbar-expand-lg navbar-light">
         <a class="navbar-brand"></a>
         <ol class="navbar-nav">
             {% url 'statlockapp:team' as team %}
             {% url 'statlockapp:logout' as logout %}
-            <li class="nav-link"><a href="{% url 'statlockapp:home' %}">Home</a></li>
+            <li class="nav-link"><a id="href" href="{% url 'statlockapp:home' %}">StatLock</a></li>
             {% if user.is_authenticated %}
-            <li class="nav-link"><a href="{% url 'statlockapp:team' %}" {% if request.path == team %}class="active" {% endif %}>Team View</a></li>
-            <li class="nav-link"><a href="{% url 'statlockapp:logout' %}" {% if request.path == logout %}class="active" {% endif %}>Logout</a></li>
+            <li class="nav-link"><a id="href" href="{% url 'statlockapp:team' %}" {% if request.path == team %}class="active" {% endif %}>Team View</a></li>
+            <li class="nav-link"><a id="href" href="{% url 'statlockapp:logout' %}" {% if request.path == logout %}class="active" {% endif %}>Logout</a></li>
             {% else %}
-            <li class="nav-link"><a href="{% url 'statlockapp:login' %}">Login</a></li>
-            <li class="nav-link"><a href="{% url 'statlockapp:register' %}">Register</a></li>
+            <li class="nav-link"><a id="href" href="{% url 'statlockapp:login' %}">Login</a></li>
+            <li class="nav-link"><a id="href" href="{% url 'statlockapp:register' %}">Register</a></li>
             {% endif %}
         </ol>
     </nav>

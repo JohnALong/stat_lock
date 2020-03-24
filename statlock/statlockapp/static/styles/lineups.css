@@ -45,7 +45,7 @@
 
 .details {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 .logo-image {
@@ -63,5 +63,32 @@
 
 .detailbox {
     border-top-style: inset;
-    border-color: #027bff;
+    border-right-style: inset;
+    border-color: dimgray;
+}
+/* #027bff */
+
+.homebackground {
+    width: 100%;
+    height: 800px;
+    background: url("./images/logo.png") no-repeat;
+    /* background-attachment: fixed; */
+    background-position: center center;
+    background-size: cover; 
+}
+
+body {
+    background-color: #E1F3FC;
+}
+
+#homebutton {
+    text-align: center;
+}
+
+.navbar {
+    background-color: dimgray;
+}
+
+#href {
+    color: white;
 }

@@ -38,6 +38,6 @@ def register(request):
                                     )
         login(request, new_user)
 
-    return redirect(reverse('statlockapp:team'))
+    return redirect(reverse('statlockapp:home'))
 
     

@@ -10,7 +10,9 @@ def lineup_list(request):
     if request.method == 'GET':
         team = Team.objects.get(id=request.user.captain.team_id)
         team_members = Player.objects.filter(team__id=request.user.captain.team_id)
-        opp_teams = Team.objects.all()
+        opp_teams = Team.objects.all().exclude(id=team.id)
+        # opp_teams = Team.objects.filter(team_id=teams.id).exclude(id=team.id)
+        # print("opp_teams", opp_teams)
         eight_ratings = []
         nine_ratings = []
         for member in team_members:

@@ -11,7 +11,7 @@
 
 
 {% if match.id is not None %}
-    <p>editing section</p>
+    <p>Edit match from: {{ match.date }}</p>
     <form action="{% url 'statlockapp:match' match.id %}" method="post">
 {% else %}
     <form action="{% url 'statlockapp:match_form' %}" method="post">

@@ -6,8 +6,8 @@
 {% endblock %}
 
 {% block content %}
-    <h1 class="title">My Team</h1>
-    <div class="title">{{ team.name }}</div>
+    <h1 class="title">{{ test_team.name }} {{team.name }}</h1>
+    <div class="title"></div>
     <div class="teambuttons">
         <form action="{% url 'statlockapp:lineup' %}" method="GET">
             {% csrf_token %}
@@ -25,7 +25,7 @@
     {% for player in all_players %}
         <ul class="list-group">
             <li class="list-group-item">
-                <a href="{% url 'statlockapp:player' player.id %}">{{ forloop.counter }}:  {{ player.name }}</a>: 8-ball rank: {{ player.eight_rating }} :--: 9-ball rank: {{ player.nine_rating }}
+                <a href="{% url 'statlockapp:player' player.id %}">{{ forloop.counter }}:  {{ player.name }}</a>: 8-ball rank: {{ player.eight_rating }} :-:-: 9-ball rank: {{ player.nine_rating }}
             </li>
         </ul>
     {% endfor %}
