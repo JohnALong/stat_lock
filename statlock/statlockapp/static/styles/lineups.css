@@ -15,6 +15,11 @@
 
 .title {
     text-align: center;
+    color: dimgray;
+}
+
+.teamcreate {
+    color: dimgray;
 }
 
 .column {
