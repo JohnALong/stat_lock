@@ -14,27 +14,27 @@
     <form action="{% url 'statlockapp:player_form' %}" method="post">
 {% endif %}
         {% csrf_token %}
-        <div class="form-group">
-            <fieldset>
+        <div class="form-group justify-content-center d-flex flex-column align-items-center">
+            <fieldset class="col-4">
                 <label for="name">Name: </label>
                 <input id="name" class="form-control" type="text" name="name" value="{{ player.name }}">
             </fieldset>
-            <fieldset>
+            <fieldset class="col-4">
                 <label for="eight_rating">8 Ball skill level: </label>
                 <input id="eight_rating" class="form-control" type="text" name="eight_rating" value="{{ player.eight_rating }}">
             </fieldset>
-            <fieldset>
+            <fieldset class="col-4">
                 <label for="nine_rating">9 Ball skill level: </label>
                 <input id="nine_rating" class="form-control" type="text" name="nine_rating" value="{{ player.nine_rating }}">
             </fieldset>
-        </div>
-
+            <br/>
         {% if player.id is not None %}
         <input type="hidden" name="actual_method" value="PUT">
         <input type="submit" value="Update" class="btn btn-outline-success btn-lg"/>
         {% else %}
-        <input type="submit" value="Add to Roster" class="btn btn-outline-success btn-lg"/>
+        <input type="submit" value="Add to Roster" class="btn btn-secondary btn-lg"/>
         {% endif %}
+        </div>
 
     </form>
 {% endblock %}

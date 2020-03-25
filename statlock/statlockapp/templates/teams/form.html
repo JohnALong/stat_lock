@@ -2,18 +2,23 @@
 {% extends 'shared/base.html' %}
 {% load static %}
 
+{% block css %}
+    <link rel="stylesheet" href="{% static 'styles/lineups.css' %}" />
+{% endblock %}
+
 {% block content %}
-    <h1>Add Team</h1>
+    <h1 class="title" >Add Team</h1>
 
 
-
-    <form action="{% url 'statlockapp:team_form' %}" method="post">
-    {% csrf_token %}
-        <fieldset>
+    <div class="form-group justify-content-center d-flex flex-column align-items-center">
+        <form action="{% url 'statlockapp:team_form' %}" method="post">
+        {% csrf_token %}
             <fieldset>
-            <label for="name">Team Name: </label>
-            <input id="name" type="text" name="name" placeholder="team name">
-        </fieldset>
+                <label class="teamcreate" for="name">Team Name: </label>
+                <input id="name" class="form-control" type="text" name="name" placeholder="team name">
+            </fieldset>
+            <br/>
             <input type="submit" value="Create Team" />
-    </form>
+        </form>
+    </div>
 {% endblock %}
