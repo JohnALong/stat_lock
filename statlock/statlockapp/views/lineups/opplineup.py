@@ -11,32 +11,39 @@ from ..connection import Connection
 def opp_lineup(request, team_id):
 
     if request.method == 'GET':
+        # pull both teams for line up comparison
         user_team = Team.objects.get(id=request.user.captain.team_id)
         opp_team = Team.objects.get(id=team_id)
         # print("opp team", opp_team.name)
         # print("user team", user_team.name)
+        # get opposing team players
         opp_players = Player.objects.filter(team_id=team_id)
+        # set empty lists to hold skill levels
         opp_eight_ratings = []
         opp_nine_ratings = []
         for opp_player in opp_players:
             opp_eight_ratings.append(opp_player.eight_rating)
             opp_nine_ratings.append(opp_player.nine_rating)
-
+        # return list of tuples of all combinations for 5 players of 8 on team
         opp_nine_combos = list(combinations(opp_nine_ratings, 5))
+        # change list of tuples to list of lists
         opp_nine_listed_combos = list(map(list, opp_nine_combos))
+        # empty list to hold new list with no duplicates
         opp_nine_no_duplicates = []
+        # empty list to hold lists of lineups that are under 23 points
         opp_nine_under_23s = []
         for opp_nine_listed_combo in opp_nine_listed_combos:
+            # sort so lists are all ordered the same for comparison in append
             opp_nine_listed_combo.sort()
             if opp_nine_listed_combo not in opp_nine_no_duplicates:
                 opp_nine_no_duplicates.append(opp_nine_listed_combo)
-
         # print("no duplicates", nine_no_duplicates)
         for opp_nine_no_duplicate in opp_nine_no_duplicates:
             if sum(opp_nine_no_duplicate) <= 23 and opp_nine_no_duplicate not in opp_nine_under_23s:
                 opp_nine_under_23s.append(opp_nine_no_duplicate)
         # print("23 check", opp_nine_under_23s)
 
+        # see above in opp_lineup for process
         # start of opp 8 ball data
         opp_eight_combos = list(combinations(opp_eight_ratings, 5))
         opp_eight_listed_combos = list(map(list, opp_eight_combos))

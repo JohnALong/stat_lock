@@ -10,9 +10,11 @@ from ..connection import Connection
 def player_details(request, player_id):
 
     if request.method == 'GET':
+        # single player being pulled for details
         player = Player.objects.get(id=player_id)
         # print(player.name)
 
+        # getting # of matches to be used for win percentage
         nine_count = player.match_set.filter(match_type=2).order_by('-id')[:20].count()
         # print("count", nine_count)
         # pull most recent 20 9 ball matches
@@ -29,6 +31,7 @@ def player_details(request, player_id):
         except ZeroDivisionError:
             nine_percentage = 0
 
+        # get count for division used in win percentage
         eight_count = player.match_set.filter(match_type=1).order_by('-id')[:20].count()
         # print("count", eight_count)
         # pull most recent 20 8 ball matches
