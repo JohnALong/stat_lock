@@ -16,6 +16,7 @@ StatLock is inspired by 25 years of playing pool for the American Poolplayers As
   * [Technologies Used](#technologies-used)
   * [Installing and Launching StatLock](#instructions-for-installing-statlock)
   * [Entity Relationship Diagram](#entity-relationship-diagram)
+  * [Code that grew my abilities](https://github.com/JohnALong/stat_lock/blob/master/statlock/statlockapp/views/lineups/opplineup.py)
   
 
 ## Project Requirements and Features List
