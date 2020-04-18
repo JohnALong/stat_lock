@@ -29,7 +29,7 @@ def lineup_list(request):
         nine_under_23s = []
         # print("listed_combos", listed_combos)
         for nine_listed_combo in nine_listed_combos:
-            nine_listed_combo.sort()
+            nine_listed_combo.sort(reverse=True)
             # print("listed_combo", nine_listed_combo)
             if nine_listed_combo not in nine_no_duplicates:
                 nine_no_duplicates.append(nine_listed_combo)
@@ -48,7 +48,7 @@ def lineup_list(request):
         eight_under_23s = []
         # print("listed_combos", listed_combos)
         for listed_combo in listed_combos:
-            listed_combo.sort()
+            listed_combo.sort(reverse=True)
             # print("listed_combo", listed_combo)
             if listed_combo not in no_duplicates:
                 no_duplicates.append(listed_combo)

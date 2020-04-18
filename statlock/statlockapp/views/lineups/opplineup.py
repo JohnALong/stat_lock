@@ -34,7 +34,7 @@ def opp_lineup(request, team_id):
         opp_nine_under_23s = []
         for opp_nine_listed_combo in opp_nine_listed_combos:
             # sort so lists are all ordered the same for comparison in append
-            opp_nine_listed_combo.sort()
+            opp_nine_listed_combo.sort(reverse=True)
             if opp_nine_listed_combo not in opp_nine_no_duplicates:
                 opp_nine_no_duplicates.append(opp_nine_listed_combo)
         # print("no duplicates", nine_no_duplicates)
@@ -50,7 +50,7 @@ def opp_lineup(request, team_id):
         opp_eight_no_duplicates = []
         opp_eight_under_23s = []
         for opp_eight_listed_combo in opp_eight_listed_combos:
-            opp_eight_listed_combo.sort()
+            opp_eight_listed_combo.sort(reverse=True)
             if opp_eight_listed_combo not in opp_eight_no_duplicates:
                 opp_eight_no_duplicates.append(opp_eight_listed_combo)
 
@@ -75,7 +75,7 @@ def opp_lineup(request, team_id):
         user_nine_under_23s = []
         # print("listed_combos", listed_combos)
         for user_nine_listed_combo in user_nine_listed_combos:
-            user_nine_listed_combo.sort()
+            user_nine_listed_combo.sort(reverse=True)
             # print("listed_combo", nine_listed_combo)
             if user_nine_listed_combo not in user_nine_no_duplicates:
                 user_nine_no_duplicates.append(user_nine_listed_combo)
@@ -94,7 +94,7 @@ def opp_lineup(request, team_id):
         user_eight_under_23s = []
         # print("listed_combos", listed_combos)
         for user_listed_combo in user_listed_combos:
-            user_listed_combo.sort()
+            user_listed_combo.sort(reverse=True)
             # print("listed_combo", listed_combo)
             if user_listed_combo not in user_no_duplicates:
                 user_no_duplicates.append(user_listed_combo)
